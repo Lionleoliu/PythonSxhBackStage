@@ -1,3 +1,5 @@
+import os
+
 from base.selenium_driver import SeleniumDriver
 
 
@@ -6,6 +8,7 @@ class LoginPage(SeleniumDriver):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
+
 
     # locators
     _username_field = "admin_user_name"
@@ -36,7 +39,7 @@ class LoginPage(SeleniumDriver):
         return result
 
     def verifyTitle(self):
-        if '首页' in self.getTitle():
+        if 'aaa' in self.getTitle():
             return True
         else:
             return False
