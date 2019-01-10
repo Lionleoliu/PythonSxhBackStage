@@ -1,9 +1,9 @@
 import os
 
-from base.selenium_driver import SeleniumDriver
+from base.basepage import BasePage
 
 
-class LoginPage(SeleniumDriver):
+class LoginPage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -39,7 +39,4 @@ class LoginPage(SeleniumDriver):
         return result
 
     def verifyTitle(self):
-        if 'aaa' in self.getTitle():
-            return True
-        else:
-            return False
+        return self.verifyPageTitle("操作手册")
