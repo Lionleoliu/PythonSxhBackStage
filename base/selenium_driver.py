@@ -7,6 +7,7 @@ import utilities.custom_Logger as cl
 import logging
 import time
 import os
+from selenium.webdriver.support.select import Select
 
 
 class SeleniumDriver():
@@ -147,6 +148,39 @@ class SeleniumDriver():
             print_stack()
             text = None
         return text
+
+    def getDropdownByValue(self, locator="", locatorType="id", element=None, value=""):
+        try:
+            if locator:
+                element = self.getElement(locator, locatorType)
+            if value:
+                selectByValue = Select(element)
+                selectByValue.select_by_value(value)
+                self.log.info("Getting value from dropbox ::" + value)
+        except:
+            self.log.error("Failed to get value from dropbox " + value)
+
+    def getDropdownByVisibleValue(self, locator="", locatorType="id", element=None, visibleValue=""):
+        try:
+            if locator:
+                element = self.getElement(locator, locatorType)
+            if visibleValue:
+                selectByValue = Select(element)
+                selectByValue.select_by_visible_text(visibleValue)
+                self.log.info("Getting value from dropbox ::" + visibleValue)
+        except:
+            self.log.error("Failed to get value from dropbox " + visibleValue)
+
+    def getDropdownByIndex(self, locator="", locatorType="id", element=None, index=""):
+        try:
+            if locator:
+                element = self.getElement(locator, locatorType)
+            if index:
+                selectByValue = Select(element)
+                selectByValue.select_by_index(index)
+                self.log.info("Getting value from dropbox ::" + index)
+        except:
+            self.log.error("Failed to get value from dropbox " + index)
 
     def isElementPresent(self, locator="", locatorType="id", element=None):
         """
