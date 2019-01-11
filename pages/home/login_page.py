@@ -1,5 +1,3 @@
-import os
-
 from base.basepage import BasePage
 
 
@@ -8,7 +6,6 @@ class LoginPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-
 
     # locators
     _username_field = "admin_user_name"
@@ -26,7 +23,7 @@ class LoginPage(BasePage):
         self.sendKeys(checkcode, self._checkcode_field)
 
     def clickSubmitButton(self):
-        self.ElementClick(self._submit_button)
+        self.elementClick(self._submit_button)
 
     def login(self, username, password, checkcode):
         self.inputUsername(username)

@@ -3,6 +3,7 @@ import os
 import pytest
 import shutil
 from base.webdriverfactory import WebDriverFactory
+from pages.home.login_page import LoginPage
 
 
 @pytest.yield_fixture()
@@ -21,12 +22,14 @@ def oneTimeSetUp(request, browser):
     #     os.remove(my_file)
     # else:
     #     print('no such file:%s' % my_file)
-    webDeriverFactory = WebDriverFactory(browser)
-    driver = webDeriverFactory.getWebDriverInstance()
+    webDriverFactory = WebDriverFactory(browser)
+    driver = webDriverFactory.getWebDriverInstance()
+    lp = LoginPage(driver)
+    lp.login("383383", "123123a@", "aa040128$")
     if request.cls is not None:
         request.cls.driver = driver
     yield driver
-    driver.quit()
+    # driver.quit()
     print("Running one time tearDown")
 
 
