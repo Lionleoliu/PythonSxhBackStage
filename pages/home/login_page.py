@@ -36,4 +36,4 @@ class LoginPage(BasePage):
         return result
 
     def verifyTitle(self):
-        return self.verifyPageTitle("操作手册")
+        return self.verifyPageTitle("首页")

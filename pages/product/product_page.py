@@ -50,3 +50,17 @@ class ProductPage(BasePage):
     def inputProductname(self, username):
         self.sendKeys(username, self._productName_field)
 
+    def selectProductType(self, visibleValue):
+        self.getDropdownByVisibleValue(locator=self._productType_DropDownBox, visibleValue=visibleValue)
+
+    def clickProductTag(self):
+        self.elementClick(self._productTag_fakeDropDownBox)
+
+    def clickHotSellingTag(self):
+        self.elementClick(self._productTagValue_hotSelling_li)
+
+    def selectStockUnit(self, visibleValue):
+        self.getDropdownByVisibleValue(locator=self._stockingUnit_dropDown, visibleValue=visibleValue)
+
+    def inputStockUnit(self, unit):
+        self.sendKeys(unit, self._stockingUnit_dropDown)

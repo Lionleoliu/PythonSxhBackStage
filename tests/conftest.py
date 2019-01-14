@@ -24,12 +24,12 @@ def oneTimeSetUp(request, browser):
     #     print('no such file:%s' % my_file)
     webDriverFactory = WebDriverFactory(browser)
     driver = webDriverFactory.getWebDriverInstance()
-    lp = LoginPage(driver)
-    lp.login("383383", "123123a@", "aa040128$")
+    # lp = LoginPage(driver)
+    # lp.login("383383", "123123a@", "aa040128$")
     if request.cls is not None:
         request.cls.driver = driver
     yield driver
-    # driver.quit()
+    driver.quit()
     print("Running one time tearDown")
 
 
