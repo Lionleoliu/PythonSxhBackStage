@@ -1,7 +1,4 @@
-import os
-
 import pytest
-import shutil
 from base.webdriverfactory import WebDriverFactory
 from pages.home.login_page import LoginPage
 

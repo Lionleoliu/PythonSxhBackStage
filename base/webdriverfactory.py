@@ -12,7 +12,7 @@ class WebDriverFactory():
         driver = webdriver
         baseURL = "https://testsxhadmin.shixiangyiwei.com/adminuser/logout.html"
         if self.browser == "firefox":
-            driver = webdriver.Firefox(executable_path="E:\\PythonProject\\SxhOnlineStage\\Driver\\geckodriver.exe")
+            driver = webdriver.Firefox(executable_path="D:\\GeckoDriver\\geckodriver.exe")
         elif self.browser == "chrome":
             driverLocation = "E:\\PythonProject\\SxhOnlineStage\\Driver\\chromedriver.exe"
             os.environ["webdriver.chrome.driver"] = driverLocation
