@@ -7,10 +7,9 @@ class ProductPage(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-        # locators
+        ######## locators  ##########
+        #############################
 
-    _productManagement_link = "//aside[@id = 'nav']//a[@class='auto']//span[text()='产品管理']"
-    _selfProductManagement_link = "//aside[@id = 'nav']//a[@class='auto menu-li']//span[text()='自营产品管理']"
     _addProduct_button = "新增"
     _productName_field = "prod_name"
     _productCategory_dropDownBox = "catId"  # 产品类目
