@@ -8,10 +8,10 @@ class NavigationPage(BasePage):
         self.driver = driver
 
     # locators
-    _productManagement_link = "//aside[@id = 'nav']//a[@class='auto']//span[text()='²úÆ·¹ÜÀí']"
-    _selfProductManagement_link = "//aside[@id = 'nav']//a[@class='auto menu-li']//span[text()='×ÔÓª²úÆ·¹ÜÀí']"
+    _productManagement_link = "//aside[@id = 'nav']//a[@class='auto']//span[text()='äº§å“ç®¡ç†']"
+    _selfProductManagement_link = "//aside[@id = 'nav']//a[@class='auto menu-li']//span[text()='è‡ªè¥äº§å“ç®¡ç†']"
     _avatar_button = "//a[@class='dropdown-toggle bg clear']"
-    _logout_link = "ÍË³öµÇÂ¼"
+    _logout_link = "é€€å‡ºç™»å½•"
 
     def navigateToProductManagement(self):
         self.elementClick(self._productManagement_link, locatorType="xpath")
